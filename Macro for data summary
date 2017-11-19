@@ -1,0 +1,86 @@
+  Range("J6").Select
+    ActiveCell.FormulaR1C1 = "1"
+    Range("J7").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=AVERAGE(R[-5]C[-9]:R[-5]C)"
+    Range("J7").Select
+    Selection.AutoFill Destination:=Range("J7:J10"), Type:=xlFillDefault
+    Range("J7:J10").Select
+    Range("A6:J10").Select
+    Selection.AutoFill Destination:=Range("A6:ALL10"), Type:=xlFillDefault
+    Range("A6:ALL10").Select
+    Range("ALL7").Select
+    ActiveCell.FormulaR1C1 = "=AVERAGE(R[-5]C[-9]:R[-5]C)"
+    Range("ALL8").Select
+    ActiveWindow.ScrollColumn = 957
+    ActiveWindow.ScrollColumn = 937
+    ActiveWindow.ScrollColumn = 881
+    ActiveWindow.ScrollColumn = 587
+    ActiveWindow.ScrollColumn = 465
+    ActiveWindow.ScrollColumn = 337
+    ActiveWindow.ScrollColumn = 265
+    ActiveWindow.ScrollColumn = 152
+    ActiveWindow.ScrollColumn = 48
+    ActiveWindow.ScrollColumn = 21
+    ActiveWindow.ScrollColumn = 19
+    ActiveWindow.ScrollColumn = 16
+    ActiveWindow.ScrollColumn = 14
+    ActiveWindow.ScrollColumn = 10
+    ActiveWindow.ScrollColumn = 5
+    ActiveWindow.ScrollColumn = 1
+    Rows("6:10").Select
+    Selection.Copy
+    Sheets.Add After:=ActiveSheet
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    Selection.Copy
+    Range("A6").Select
+    Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _
+        False, Transpose:=True
+    Rows("1:14").Select
+    Application.CutCopyMode = False
+    Selection.Delete Shift:=xlUp
+    Columns("A:E").Select
+    ActiveWorkbook.Worksheets("Sheet2").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("Sheet2").Sort.SortFields.Add Key:=Range("A1"), _
+        SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:=xlSortNormal
+    With ActiveWorkbook.Worksheets("Sheet2").Sort
+        .SetRange Range("A1:E16389")
+        .Header = xlNo
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Rows("1:1").Select
+    Selection.Insert Shift:=xlDown, CopyOrigin:=xlFormatFromLeftOrAbove
+    Selection.Insert Shift:=xlDown, CopyOrigin:=xlFormatFromLeftOrAbove
+    Range("B1").Select
+    Application.Left = 361
+    Application.Top = 56.5
+    ActiveCell.FormulaR1C1 = "A"
+    Range("C1").Select
+    ActiveCell.FormulaR1C1 = "B"
+    Range("D1").Select
+    ActiveCell.FormulaR1C1 = "C"
+    Range("E1").Select
+    ActiveCell.FormulaR1C1 = "D"
+    Range("B2").Select
+    ActiveCell.FormulaR1C1 = "0.15"
+    Range("C2").Select
+    ActiveCell.FormulaR1C1 = "0.35"
+    Range("D2").Select
+    ActiveCell.FormulaR1C1 = "0.3"
+    Range("E2").Select
+    ActiveCell.FormulaR1C1 = "0.2"
+    Range("F3").Select
+    ActiveCell.FormulaR1C1 = "=SUMPRODUCT(R2C2:R2C5,RC[-4]:RC[-1])"
+    Range("F3").Select
+    Application.Left = 15.25
+    Application.Top = 39.25
+    Application.WindowState = xlMaximized
+    Selection.AutoFill Destination:=Range("F3:F102")
+    Range("F3:F102").Select
+    ActiveWindow.SmallScroll Down:=-30
+    ActiveWorkbook.Save
